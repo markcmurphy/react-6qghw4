@@ -1,5 +1,6 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
 
 export default function HookForm() {
   const {
@@ -9,27 +10,24 @@ export default function HookForm() {
     formState: { errors }
   } = useForm();
 
-  const postForm = (d, e) => {
+  const postForm = d => {
     console.log(d);
-    fetch(
-      'https://www.hashemian.com/tools/form-post-tester.php/sdrew2',
-      {
+    axios
+      .post('https://www.hashemian.com/tools/form-post-tester.php/sdrew23', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(d)
-      }
-    )
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success:', data);
       })
-      .catch(error => {
-        console.error('Error:', error);
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
       });
   };
-  
+
   console.log(watch('example')); // watch input value by passing the name of it
 
   return (
@@ -39,7 +37,7 @@ export default function HookForm() {
       // action="https://jira.bigcommerce.com/rest/collectors/1.0/template/custom/50049bef"
       // method="POST"
       // onSubmit={handleSubmit(d => postform(d))}
-      onSubmit={handleSubmit(d => postForm(d))}
+      onSubmit={handleSubmit(postForm)}
     >
       <input
         type="hidden"

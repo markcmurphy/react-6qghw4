@@ -7,7 +7,7 @@ export default function App() {
   return (
     <div>
       <Form />
-      <HookForm/>
+      {/* <HookForm/> */}
     </div>
   );
 }
