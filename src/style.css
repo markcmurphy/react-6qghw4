@@ -1,7 +1,13 @@
-h1, p {
+h1,
+p {
+  padding: 10% 10% 0% 10%;
   font-family: Lato;
 }
 
 form {
   padding: 10%;
+}
+
+input {
+  margin-bottom: 13vh;
 }
