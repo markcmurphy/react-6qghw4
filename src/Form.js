@@ -11,14 +11,16 @@ export default function HookForm() {
   } = useForm();
 
   const postForm = d => {
-    console.log(d);
+    const formBody = new URLSearchParams(Object.entries(d)).toString();
+    console.log(formBody);
+
     axios
-      .post('https://www.hashemian.com/tools/form-post-tester.php/sdrew23', {
+      .post('https://www.hashemian.com/tools/form-post-tester.php/sdrew2322', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/x-www-form-urlencoded'
         },
-        body: JSON.stringify(d)
+        body: formBody
       })
       .then(function(response) {
         console.log(response);
