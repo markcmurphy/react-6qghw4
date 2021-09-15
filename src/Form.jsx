@@ -49,7 +49,7 @@ export default function HookForm() {
 
   return (
     <>
-      <h1>PoweredBy Documentation Access Request</h1>
+      <h1>Powered By Documentation Access Request</h1>
       <form onSubmit={handleSubmit(postForm)} className="mt-3">
         <input
           type="hidden"
@@ -89,7 +89,7 @@ export default function HookForm() {
           name="summary"
           {...register('summary', { required: true })}
           type="text"
-          defaultValue="PoweredBy Documentation Access Request"
+          defaultValue="Powered By Documentation Access Request"
           style={{
             backgroundRepeat: 'no-repeat',
             backgroundAttachment: 'scroll',
