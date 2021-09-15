@@ -49,7 +49,7 @@ export default function HookForm() {
   return (
     <>
       <h1>PoweredBy Documentation Access Request</h1>
-      <form onSubmit={handleSubmit(postForm)}>
+      <form onSubmit={handleSubmit(postForm)} className="mt-3">
         <input
           type="hidden"
           title="projectKey"
