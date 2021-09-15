@@ -35,6 +35,7 @@ export default function HookForm() {
           'Thank you! We have received your request',
           'success'
         );
+        e.target.reset();
       })
       .catch(function(error) {
         Swal.fire({
